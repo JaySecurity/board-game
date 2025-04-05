@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cokdq0nyw25cw"]
+
+[ext_resource type="Script" uid="uid://cippbb4r25w7c" path="res://Scripts/Spot.gd" id="1_jjcqy"]
+
+[node name="Start" type="Marker2D"]
+gizmo_extents = 25.0
+script = ExtResource("1_jjcqy")
