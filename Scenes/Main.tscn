@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dwuagrw6vbf5j" path="res://Scripts/Main.gd" id="1_xelc4"]
 [ext_resource type="Texture2D" uid="uid://iga83jr410ic" path="res://Assets/images/pink piece.png" id="2_0tfws"]
-[ext_resource type="Texture2D" uid="uid://v1grm0ggmrmm" path="res://Assets/images/board.png" id="2_rdk1j"]
+[ext_resource type="Texture2D" uid="uid://ch5d7aattguk4" path="res://Assets/images/board with question marks.png" id="3_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://cokdq0nyw25cw" path="res://Scenes/spot.tscn" id="4_pbw6q"]
 [ext_resource type="PackedScene" uid="uid://tjmgaetscb7c" path="res://Scenes/Dice.tscn" id="4_rgh2o"]
 
@@ -30,9 +30,12 @@ position = Vector2(320, 160)
 [node name="Spot6" parent="Spots" instance=ExtResource("4_pbw6q")]
 position = Vector2(384, 160)
 direction = 2
+spaces = 2
 
 [node name="Spot7" parent="Spots" instance=ExtResource("4_pbw6q")]
 position = Vector2(448, 160)
+direction = 3
+points = 2
 
 [node name="Spot8" parent="Spots" instance=ExtResource("4_pbw6q")]
 position = Vector2(512, 160)
@@ -49,9 +52,12 @@ position = Vector2(576, 288)
 [node name="Spot12" parent="Spots" instance=ExtResource("4_pbw6q")]
 position = Vector2(512, 288)
 direction = 1
+spaces = 2
 
 [node name="Spot13" parent="Spots" instance=ExtResource("4_pbw6q")]
 position = Vector2(448, 288)
+direction = 3
+points = 2
 
 [node name="Spot14" parent="Spots" instance=ExtResource("4_pbw6q")]
 position = Vector2(384, 288)
@@ -73,7 +79,7 @@ position = Vector2(64, 288)
 
 [node name="Board" type="Sprite2D" parent="."]
 position = Vector2(320, 180)
-texture = ExtResource("2_rdk1j")
+texture = ExtResource("3_pbw6q")
 
 [node name="PinkPiece" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -86,5 +92,7 @@ position = Vector2(320, 82)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="roll_complete" from="Dice" to="." method="_on_dice_roll_complete"]
