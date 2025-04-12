@@ -2,6 +2,7 @@ extends Sprite2D
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var timer : Timer = $Timer
+@onready var can_roll: bool = true
 
 signal roll_complete(rolled)
 
@@ -9,7 +10,7 @@ func _ready() -> void:
   randomize()
 
 func _unhandled_input(event: InputEvent) -> void:
-  if Input.is_action_just_pressed("ui_click"):
+  if can_roll and Input.is_action_just_pressed("ui_click"):
     animation_player.play("Roll")
     timer.start()
 
